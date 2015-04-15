@@ -1,0 +1,18 @@
+web:
+  build: .
+  ports:
+    - "8000:8000"
+  links:
+    - db
+  environment:
+    WEB_PORT: 8000
+    DATABASE_HOST: db
+    DATABASE_PORT: 3306
+    DATABASE_NAME: drupal
+    DATABASE_USER: root
+    DATABASE_PASSWORD: pass
+db:
+  image: mysql
+  environment:
+    MYSQL_DATABASE: drupal
+    MYSQL_ROOT_PASSWORD: pass
