@@ -29,5 +29,4 @@ COPY . /var/www/
 RUN chmod a+w /var/www/sites/default ; mkdir /var/www/sites/default/files ; chown -R www-data:www-data /var/www/
 
 RUN chmod 755 start.sh /etc/apache2/foreground.sh
-EXPOSE $WEB_PORT
 CMD ["/bin/bash", "/start.sh"]

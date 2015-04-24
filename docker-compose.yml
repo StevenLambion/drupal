@@ -1,11 +1,10 @@
 web:
   build: .
   ports:
-    - "8000:8000"
+    - "8000:80"
   links:
     - db
   environment:
-    WEB_PORT: 8000
     DATABASE_HOST: db
     DATABASE_PORT: 3306
     DATABASE_NAME: drupal
