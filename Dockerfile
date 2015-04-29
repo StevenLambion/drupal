@@ -5,6 +5,8 @@
 FROM    debian:wheezy
 MAINTAINER Ricardo Amaro <mail_at_ricardoamaro.com>
 
+ENV WEB_PORT 8000
+
 #RUN echo "deb http://archive.ubuntu.com/ubuntu saucy main restricted universe multiverse" > /etc/apt/sources.list
 RUN apt-get update
 #RUN apt-get -y upgrade

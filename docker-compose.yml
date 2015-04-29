@@ -1,7 +1,9 @@
 web:
   build: .
+  volumes:
+    - sites/all/modules/custom_features:/var/www/sites/all/modules/custom_features
   ports:
-    - "8000:8000"
+    - "8000:80"
   links:
     - db
   environment:
