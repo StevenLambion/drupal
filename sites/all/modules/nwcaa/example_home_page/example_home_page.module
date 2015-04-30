@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Example Home Page feature.
+ */
+
+include_once 'example_home_page.features.inc';

@@ -15,10 +15,11 @@
 function nwcaa_install() {
   include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
   standard_install();
-  nwcaa_install_themes();
+  nwcaa_install_default_themes();
+  nwcaa_install_default_blocks();
 }
 
-function nwcaa_install_themes() {
+function nwcaa_install_default_themes() {
   $enable = array(
     'theme_default' => 'venture_theme',
     'admin_theme' => 'adminimal_theme'
@@ -30,4 +31,8 @@ function nwcaa_install_themes() {
       variable_set($var, $theme);
     }
   }
+}
+
+function nwcaa_install_default_blocks() {
+  /* TODO */
 }

@@ -26,6 +26,9 @@ dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
 
+; NWCAA Features
+dependencies[] = example_home_page
+
 ; Developer Dependencies
 dependencies[] = features
 dependencies[] = ctools
@@ -54,3 +57,4 @@ dependencies[] = panels
 dependencies[] = panelizer
 dependencies[] = views
 dependencies[] = rules
+dependencies[] = media
