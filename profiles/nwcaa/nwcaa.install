@@ -1,0 +1,33 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the NWCAA installation profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ * It first runs the standard install profile.
+ *
+ * @see system_install()
+ */
+function nwcaa_install() {
+  include_once DRUPAL_ROOT . '/profiles/standard/standard.install';
+  standard_install();
+  nwcaa_install_themes();
+}
+
+function nwcaa_install_themes() {
+  $enable = array(
+    'theme_default' => 'venture_theme',
+    'admin_theme' => 'adminimal_theme'
+  );
+  theme_enable($enable);
+
+  foreach ($enable as $var => $theme) {
+    if (!is_numeric($var)) {
+      variable_set($var, $theme);
+    }
+  }
+}
