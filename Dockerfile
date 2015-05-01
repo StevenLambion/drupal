@@ -28,5 +28,7 @@ RUN rm -rf /var/www/ ;
 COPY . /var/www/
 RUN chmod a+w /var/www/sites/default ; mkdir /var/www/sites/default/files ; chown -R www-data:www-data /var/www/
 
+EXPOSE 80
+
 RUN chmod 755 start.sh /etc/apache2/foreground.sh
 CMD ["/bin/bash", "/start.sh"]

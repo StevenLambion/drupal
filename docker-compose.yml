@@ -13,5 +13,4 @@ web:
 db:
   image: mysql
   environment:
-    MYSQL_DATABASE: drupal
     MYSQL_ROOT_PASSWORD: pass

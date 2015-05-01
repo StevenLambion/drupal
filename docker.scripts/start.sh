@@ -13,7 +13,7 @@ if [ ! -f /var/www/sites/default/settings.php ]; then
 	# echo $MYSQL_PASSWORD > /mysql-root-pw.txt
 	# echo $DRUPAL_PASSWORD > /drupal-db-pw.txt
 	# mysqladmin -u root password $MYSQL_PASSWORD
-	# mysql -uroot -p$MYSQL_PASSWORD -e "CREATE DATABASE drupal; GRANT ALL PRIVILEGES ON drupal.* TO 'drupal'@'localhost' IDENTIFIED BY '$DRUPAL_PASSWORD'; FLUSH PRIVILEGES;"
+	mysql -h ${DATABASE_HOST} -P ${DATABASE_PORT} -u ${DATABASE_USER} -p${DATABASE_PASSWORD} -e "CREATE DATABASE IF NOT EXISTS ${DATABASE_NAME}; GRANT ALL PRIVILEGES ON drupal.* TO '${DATABASE_USER}' IDENTIFIED BY '$DATABASE_PASSWORD'; FLUSH PRIVILEGES;"
 	sed -i 's/AllowOverride None/AllowOverride All/' /etc/apache2/sites-available/default
 	a2enmod rewrite vhost_alias
 	cd /var/www/
